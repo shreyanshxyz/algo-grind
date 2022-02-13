@@ -8,7 +8,7 @@ int sumDigits(int n){
 
     int lastDigit = n % 10;
     int remainder = n / 10;
-    return sumDigits();
+    return sumDigits(lastDigit+ remainder);
 }
 
 int main(){

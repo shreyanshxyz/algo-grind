@@ -11,6 +11,7 @@ int patterN(int n){
     }
     cout << " \n";
     patterN(n-1);
+    
 }
 
 int main(){

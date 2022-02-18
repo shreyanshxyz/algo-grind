@@ -15,7 +15,7 @@ int linearS(vector<int> &arr, int n, int x){
 }
 
 int main(){
-    vector<int> arr{3,5,1,2,6};
+    vector<int> arr{3,5,1,2,6,7,9};
     int x = 7;
     int n = arr.size();
     cout << linearS(arr, n, x);

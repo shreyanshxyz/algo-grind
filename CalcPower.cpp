@@ -10,11 +10,10 @@ int calcP(int a, int b){
         return 1;
     }
 
-    int pow = a * a;
-    calcP(a, b - 1);
+    int pow = a * calcP(a, b - 1);
     return pow;
 }
 
 int main(){
-    calcP(2, 3);
+    cout << calcP(32, 4);
 }

@@ -5,6 +5,7 @@ void bSort(vector<int> &arr, int n){
     if(n <= 0){
         return;
     }
+    // We do the bubble sort process for one element. Just for once. After that we let recursion take care of the rest.
     for(int i = 0; i < n -1; i++){
         if(arr[i] >arr[i+1])
             swap(arr[i], arr[i+1]);

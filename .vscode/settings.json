@@ -5,6 +5,13 @@
     "random": "cpp",
     "valarray": "cpp",
     "string_view": "cpp",
-    "regex": "cpp"
+    "regex": "cpp",
+    "array": "cpp",
+    "fstream": "cpp",
+    "future": "cpp",
+    "shared_mutex": "cpp",
+    "sstream": "cpp",
+    "thread": "cpp",
+    "tuple": "cpp"
   }
 }

@@ -20,15 +20,15 @@ public:
             }                                    // jaise hi complete hojae top to bottom, rightmost row is done so we move inside by  
             right--;                            // right--
 
-            if(left > right || top > bottom) break;
-            for(i = right; i >= left; i--) {
-                res.push_back(matrix[bottom][i]);
+            if(left > right || top > bottom) break; // now top row and rightmost row is done so now we move to the bottom row. we put a
+            for(i = right; i >= left; i--) { // pointer from the rightmost side at bottom and start traversing to the left. as soon as
+                res.push_back(matrix[bottom][i]); // the travesal is done, we move our bottom pointer upward for the new bottom row
             }
             bottom--;
-            for(i=bottom; i >= top; i--) {
-                res.push_back(matrix[i][left]);
+            for(i=bottom; i >= top; i--) { // for the leftmost column we move from the bottom most pointer to the top most through the
+                res.push_back(matrix[i][left]); // given iteration. after that we push the leftmost column inside and then continue the
             }
-            left++;
+            left++; // continue the same process again till we get the inside most element, that is when the while loop breaks.
         }
         
         return res;

@@ -22,7 +22,7 @@ public:
 
 // ---------------------------------------------------------------------------------------------------------------------------------
 
-// Optimal
+// Better
 
     bool search(vector<vector<int> > matrix, int n, int m, int x) 
     {
@@ -41,3 +41,5 @@ public:
         }
         return 0;
     }
+
+//  Optimal (Binary Search)

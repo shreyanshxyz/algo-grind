@@ -1,5 +1,7 @@
 // Brute
 class Solution {
+    // the brute force solution is simple and it should be self explanatory. We have to find out the K'th smallest element in a sorted
+    // matrix.
 public:
     int kthSmallest(vector<vector<int>>& mat, int k) {
           vector<int> ans;

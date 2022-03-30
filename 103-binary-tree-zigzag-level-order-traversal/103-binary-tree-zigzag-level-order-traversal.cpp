@@ -13,7 +13,7 @@ class Solution {
 public:
     vector<vector<int>> zigzagLevelOrder(TreeNode* root) {
         vector<vector<int>> result;
-        if (root == NULL) {
+        if (!root) {
             return result;
         }
 

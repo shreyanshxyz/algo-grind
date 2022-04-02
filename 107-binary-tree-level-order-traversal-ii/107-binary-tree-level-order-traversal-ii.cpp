@@ -28,8 +28,10 @@ public:
                 if(node->left) q.push(node->left);
                 if(node->right) q.push(node->right);
             }
-            v.insert(v.begin(), a);
+            // v.insert(v.begin(), a);
+            v.push_back(a);
         }
+        reverse(v.begin(), v.end());
         return v;
     }
 };

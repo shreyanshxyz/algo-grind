@@ -15,28 +15,25 @@ public:
         vector<vector<int>> result;
         if (!root) return result;
 
-        queue<TreeNode*> nodesQueue;
-        nodesQueue.push(root);
-        bool leftToRight = true;
-
-        while ( !nodesQueue.empty()) {
-            int size = nodesQueue.size();
-            vector<int> row(size);
-            for (int i = 0; i < size; i++) {
-                TreeNode* node = nodesQueue.front();
-                nodesQueue.pop();
-                int index = (leftToRight) ? i : (size - 1 - i);
-
-                row[index] = node->val;
-                if (node->left) {
-                    nodesQueue.push(node->left);
-                }
-                if (node->right) {
-                    nodesQueue.push(node->right);
-                }
+        queue<TreeNode*> q;
+        q.push(root);
+        bool side = true;
+        while(!q.empty()){
+            int sz = q.size();
+            vector<int>l;
+            for(int i = 0; i < sz; i++){
+                TreeNode* node = q.front();
+                q.pop();
+                l.push_back(node->val);
+                
+                if(node->left) q.push(node->left);
+                if(node->right) q.push(node->right);   
             }
-            leftToRight = !leftToRight;
-            result.push_back(row);
+            if(side != true){
+                reverse(l.begin(), l.end());
+            }
+            result.push_back(l);
+            side = !side;
         }
         return result;
     }

@@ -23,14 +23,14 @@ public:
         
         while(!q.empty())
         {
-            int cnt = q.size();
+            int sz = q.size();
             // start is the index of root node for first level
             int start = q.front().second;
             int end = q.back().second;
             
             res = max(res,end-start + 1);
             
-            for(int i = 0; i <cnt; ++i)
+            for(int i = 0; i <sz; ++i)
             {
                 pair<TreeNode*, int> p = q.front();
                 // we will use it while inserting it children

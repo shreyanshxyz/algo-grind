@@ -19,24 +19,23 @@ public:
 class Solution {
 public:
     Node* connect(Node* root) {
-//         Right to left bfs
-        if (!root) return nullptr;
+        if(!root) return NULL;
+        
         queue<Node*>q;
         q.push(root);
-        
         while(!q.empty()){
             int sz = q.size();
-            Node* rn = nullptr; // we create a rightnode and set it to null
-            for(int i = 0; i < sz; i++){
-                Node* cur = q.front(); // create a cur node to handle every current node
+            while(sz--){
+                Node* n = q.front(); 
                 q.pop();
-                cur -> next = rn; // set its next to the null (rightnode as of now)
-                rn = cur; // set cur as rightnode
                 
-                if(cur -> right){ //do the rightward bfs so that the right node gets inserted first so that
-                    q.push(cur -> right); //right waala pehle null pe set hoga fir right waala cur hojaega
-                    q.push(cur -> left); // fir jab left waala ayega tabtak vo right pe set hoga and we move further below
-                }
+                if(sz == 0)
+                    n->next = NULL; // if the queue is empty we are on the rightmost node thus we set its next to null
+                else
+                    n->next = q.front(); // else we set it to the next node in the queue since we are not rightmost side
+                
+                if(n->left) q.push(n->left);
+                if(n->right) q.push(n->right);
             }
         }
         return root;

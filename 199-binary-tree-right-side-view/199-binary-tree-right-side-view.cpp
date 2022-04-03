@@ -21,11 +21,11 @@ public:
             int sz = q.size();
             for(int i = 0; i < sz; i++){
                 TreeNode* node = q.front();
-                q.pop();
+                q.pop(); // simple bfs with left element first and right next
                 
                 if(i == sz - 1){
-                    a.push_back(node->val);
-                }
+                    a.push_back(node->val); // we do this so that only the last element gets pushed i.e rightmost and the
+                }                           // elements on the left do not get pushed in
                 
                 if(node->left)
                     q.push(node->left);

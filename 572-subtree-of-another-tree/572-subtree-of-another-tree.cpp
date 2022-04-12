@@ -13,9 +13,10 @@ class Solution {
 public:
   bool areEqual(TreeNode* s, TreeNode* t) {
     if (!s || !t) {
-      return s == t;
+      return s == t; // both will be null
     }
-    return s->val == t->val
+      // since both the values are equal we return them and start the next preorder recursive call 
+    return s->val == t->val 
       && areEqual(s->left, t->left)
       && areEqual(s->right, t->right);
   }

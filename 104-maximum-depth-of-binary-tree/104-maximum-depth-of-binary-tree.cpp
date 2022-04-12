@@ -14,9 +14,11 @@ public:
     int maxDepth(TreeNode* root) {
         if(!root) return 0;
         
-        int l = maxDepth(root->left);
+        // we find the farthest depths on the left and right using this recursion call
+        int l = maxDepth(root->left); 
         int r = maxDepth(root->right);
         
+        // we return the max of both of them and add 1 because the root node does not get counted
         return max(l, r) + 1;
     }
 };

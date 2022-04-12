@@ -16,16 +16,15 @@ public:
         
         queue<TreeNode*>q;
         q.push(root);
-        
         while(!q.empty()){
             int sz = q.size();
             for(int i = 0; i < sz; i++){
-                TreeNode* temp = q.front();
+                TreeNode* node = q.front();
                 q.pop();
-                swap(temp->left, temp->right); // we simply swap the left and right nodes and then move to the next level
-                
-                if(temp->left) q.push(temp->left);
-                if(temp->right) q.push(temp->right);
+                swap(node->left, node->right); // we swap the left and right nodes on each level and then move to the next
+                // this simply eases any complex methods to be used and we can invert the tree in an easy manner
+                if(node->left) q.push(node->left);
+                if(node->right) q.push(node->right);
             }
         }
         return root;

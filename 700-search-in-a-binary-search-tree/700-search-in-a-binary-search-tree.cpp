@@ -31,7 +31,7 @@ public:
 //         }
 //         return NULL;
         
-// Optimal Using Recursion
+// Using Recursion
         if(!root) return root;
         
         //create node to return the answer

@@ -13,7 +13,7 @@ public:
         if(!root || root == p || root == q) return root; // if any of the elements is the root node then we simply return it because there is no ancestor of a root node
         TreeNode* left = lowestCommonAncestor(root->left, p, q);
         TreeNode* right = lowestCommonAncestor(root->right, p, q);
-        if(left == NULL && right == NULL) return NULL; 
+
         if(left != NULL && right != NULL) return root;  
         return left == NULL ? right : left; // if left == NULL we return left else we return right
     }

@@ -14,11 +14,11 @@ public:
     TreeNode* sortedArrayToBST(vector<int>& nums) {
         if(nums.size() == 0) return nullptr;
         if(nums.size() == 1) return new TreeNode(nums[0]);
-        int mid = nums.size()/2;
-        TreeNode* root = new TreeNode(nums[mid]);
+        int mid = nums.size()/2; // we find the middle element
+        TreeNode* root = new TreeNode(nums[mid]); // we make the root node from the middle element
         
-        vector<int>begin(nums.begin(), nums.begin()+mid);
-        vector<int>ending(nums.begin()+mid+1, nums.end());
+        vector<int>begin(nums.begin(), nums.begin()+mid); // we make a vector of all the elements before mid for our left 
+        vector<int>ending(nums.begin()+mid+1, nums.end()); // we make a vector of all the elements after mid for our right
         
         root->left = sortedArrayToBST(begin);
         root->right = sortedArrayToBST(ending);

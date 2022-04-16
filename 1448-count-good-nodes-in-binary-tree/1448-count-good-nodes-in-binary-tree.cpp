@@ -14,15 +14,16 @@ class Solution {
 public:
     void solve(TreeNode* root, int lim){
         if(!root) return;
-        
 // if the current root value is greater than limit, we increment answer. (Always true for root)
         if(root->val >= lim){
             ans++;
+            lim = root->val;
         }
 // we set the upper limit as the previous node always, as we traverse from left side and then the right side
-        solve(root->left, max(lim,root->val));
-        solve(root->right, max(lim,root->val));
+        solve(root->left, lim);
+        solve(root->right, lim);
     }
+    
     int goodNodes(TreeNode* root) {
         solve(root, INT_MIN);
         return ans;

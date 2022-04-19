@@ -2,8 +2,8 @@ class Solution {
 public:
 	TreeNode* firstMistake, *secondMistake, *pre;
 	void recoverTree(TreeNode* root) {
-		pre = new TreeNode(INT_MIN);
-		inorder(root);
+		pre = new TreeNode(INT_MIN); // new node with min 32 bit int value
+		inorder(root); 
 		swap(firstMistake->val, secondMistake->val);
 	}
 

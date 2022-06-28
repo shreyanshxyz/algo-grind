@@ -25,9 +25,9 @@ public:
 // Build the graph adjacency list
         vector<vector<int>> graph(n);
         for(int i = 0 ; i < edges.size() ; i ++) {
-            int first = edges[i][0], second = edges[i][1];
-            graph[first].push_back(second);
-            graph[second].push_back(first);
+//             first node  = edges[i][0], second node = edges[i][1];
+            graph[edges[i][0]].push_back(edges[i][1]);
+            graph[edges[i][1]].push_back(edges[i][0]);
             
         }
         

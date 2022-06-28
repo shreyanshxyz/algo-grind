@@ -26,9 +26,11 @@ public:
         vector<vector<int>> graph(n);
         for(int i = 0 ; i < edges.size() ; i ++) {
 //             first node  = edges[i][0], second node = edges[i][1];
+// we basically take the first node as the index and place its adjacent nodes there
             graph[edges[i][0]].push_back(edges[i][1]);
+// we take the second node as the index and place its adjacent nodes there
             graph[edges[i][1]].push_back(edges[i][0]);
-            
+// repeating the process for all nodes of all edges
         }
         
 // We create our own visited array to track the visited nodes

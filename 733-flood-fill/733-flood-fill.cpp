@@ -17,9 +17,10 @@ public:
         int old = image[sr][sc];
         if(old == color) return image;
         if(image.size() == 0) return image;
+        
         int row = image.size();
         int col = image[0].size();
-        if (image.size() == 0) return image;
+        
         solve(image, sr, sc, old, color, row, col);
         return image;
     }

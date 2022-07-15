@@ -13,7 +13,7 @@ public:
         }
         return area;
     }
-private:
+
     void solve(vector<vector<int>>& grid, int i, int j, int& a) {
         int m = grid.size(), n = grid[0].size();
         if (i >= 0 && i < m && j >= 0 && j < n && grid[i][j]) {

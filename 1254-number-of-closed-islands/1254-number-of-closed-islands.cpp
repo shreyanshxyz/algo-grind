@@ -2,27 +2,27 @@ class Solution {
 public:
 int row;
 int col;
-    void dfs(int rows, int cols, vector<vector<int>> &grid)
+    void dfs(int i, int j, vector<vector<int>> &grid)
     {
 //         now if we find a piece of land connected to the border we change that 1 into 0, because its not of any use
-        grid[rows][cols] = 2;
+        grid[i][j] = 2;
         
 //         this is a simple dfs call that checks the left-right-top-bottom cells of that piece and sees if that is also a 1, if it is then the same process gets conducted with it as well because it is connected to the cell touching the boundary.
-        if (rows > 0 && grid[rows - 1][cols] == 0)
+        if (i > 0 && grid[i - 1][j] == 0)
         {
-            dfs(rows - 1, cols, grid);
+            dfs(i - 1, j, grid);
         }
-        if (rows < row - 1 && grid[rows + 1][cols] == 0)
+        if (i < row - 1 && grid[i + 1][j] == 0)
         {
-            dfs(rows + 1, cols, grid);
+            dfs(i + 1, j, grid);
         }
-        if (cols > 0 && grid[rows][cols - 1] == 0)
+        if (j > 0 && grid[i][j - 1] == 0)
         {
-            dfs(rows, cols - 1, grid);
+            dfs(i, j - 1, grid);
         }
-        if (cols < col - 1 && grid[rows][cols + 1] == 0)
+        if (j < col - 1 && grid[i][j + 1] == 0)
         {
-            dfs(rows, cols + 1, grid);
+            dfs(i, j + 1, grid);
         }
     }
     
@@ -43,7 +43,7 @@ int col;
         row = grid.size();
         col = grid[0].size();
         int ans = 0;
-//         Traverse top and bottom rows for corner islands & set them to 1 since they are not closed off
+//         Traverse top and bottom i for corner islands & set them to 1 since they are not closed off
         for (int i = 0; i < row; i++)
         {
             if (grid[i][0] == 0)
